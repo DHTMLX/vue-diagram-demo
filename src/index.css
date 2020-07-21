@@ -1,0 +1,65 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Roboto", sans-serif;
+	box-sizing: border-box;
+}
+
+.dhx-container {
+	background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.dhx-container_header {
+	text-align: center;
+}
+
+.dhx-container a {
+  cursor: pointer;
+	text-decoration: none;
+  color: #0288d1;
+  margin-bottom: 15px;
+}
+
+.dhx-container h3 {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.dhx-container .inner {
+	width: 100%;
+}
+
+.dhx_sample-controls {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 60px;
+}
+
+/* Buttons */
+.dhx_sample-btn {
+	border: none;
+	outline: none;
+	padding: 6px 16px;
+	border-radius: 2px;
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: 500;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+.dhx_sample-btn--flat {
+	background: #0288d1;
+	color: #fff;
+}
+.dhx_sample-btn--flat:hover {
+	background-color: #35a0da;
+	transition: background-color .2s ease-out;
+}
+
+.dhx_diagram {
+	background-color: #fff !important;
+}
