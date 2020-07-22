@@ -4,7 +4,7 @@
       <button class="dhx_sample-btn dhx_sample-btn--flat" @click="runEditor()">Edit</button>
     </div>
     <div v-bind:class="classObject">
-      <div class="dhx_sample-container__widget" ref="diagram" v-show="collapsed" @click="showMenu"></div>
+      <div class="dhx_sample-container__widget" ref="diagram" v-show="collapsed"></div>
       <div class="dhx_sample-widget" ref="editor" v-show="expanded"></div>
     </div>
   </div>
@@ -18,54 +18,10 @@ export default {
   data: () => ({
     diagram: null,
     editor: null,
-    item: {},
-    contextMenu: null,
     collapsed: true,
     expanded: false,
-    menuData: [
-      {
-        type: "menuItem",
-        id: "mail",
-        value: "Mail",
-        icon: "mdi mdi-email",
-      },
-      {
-        type: "menuItem",
-        id: "call",
-        value: "Call",
-        icon: "mdi mdi-phone",
-      },
-      {
-        type: "menuItem",
-        id: "site",
-        value: "Open Site",
-        icon: "mdi mdi-open-in-new",
-      },
-    ],
   }),
   mounted() {
-    fromCDN(["https://cdn.dhtmlx.com/suite/edge/suite.js", "https://cdn.dhtmlx.com/suite/edge/suite.css"]).then(() => {
-      // eslint-disable-next-line no-undef
-      this.contextMenu = new dhx.ContextMenu(null, {
-        css: "dhx_widget--bg_gray",
-      });
-
-      this.contextMenu.data.parse(this.menuData);
-      this.contextMenu.events.on("click", id => {
-        switch (id) {
-          case "mail":
-            window.open(`mailto:${this.item.mail}`, "_blank");
-            break;
-          case "call":
-            window.open(`tel:${this.item.phone}`, "_blank");
-            break;
-          case "site":
-            window.open("https://dhtmlx.com/docs/products/dhtmlxDiagram/", "_blank");
-            break;
-        }
-      });
-    });
-
     fromCDN([
       "https://cdn.dhtmlx.com/diagram/pro/edge/diagramWithEditor.js",
       "https://cdn.dhtmlx.com/diagram/pro/edge/diagramWithEditor.css",
@@ -112,16 +68,14 @@ export default {
         ],
       });
 
-      this.diagram.events.on("ShapeClick", id => {
-        this.item = this.diagram.data.getItem(id);
-      });
-
       this.editor.events.on("ApplyButton", () => {
         this.applyButton();
       });
+
       this.editor.events.on("ResetButton", () => {
         this.resetButton();
       });
+
       this.diagram.data.load("./static/medCardShape.json");
     });
   },
@@ -130,14 +84,6 @@ export default {
       this.expanded = true;
       this.collapsed = false;
       this.editor.import(this.diagram);
-    },
-    showMenu(e) {
-      // eslint-disable-next-line no-undef
-      dhx.awaitRedraw().then(() => {
-        if (e.target.classList.contains("contextMenu_container")) {
-          this.contextMenu.showAt(e.target, "bottom");
-        }
-      });
     },
     applyButton() {
       this.collapsed = true;
@@ -148,30 +94,26 @@ export default {
       this.collapsed = true;
       this.expanded = false;
     },
-    template(config) {
+    template({ photo, name, post, phone, mail }) {
       return `
-          <section class="template">
-            <div class="template_container">
-              <div class="template_img-container">
-                <img src="${config.photo}" alt="${config.name}-${config.post}"></img>
-              </div>
-              <div class="template_info-container">
-                <h3>${config.name}</h3>
-                <p>${config.post}</p>
-                <span>
-                  <img class="template_icon" src="../common/icons/cellphone-android.svg" alt="phone number"></img>
-                  <p>${config.phone}</p>
-                </span>
-                <span>
-                  <img class="template_icon" src="../common/icons/email-outline.svg" alt="email"></img>
-                  <a style="color:#0288D1" href="mailto:${config.mail}" target="_blank">${config.mail}</a>
-                </span>
-              </div>
-            </div>
-            <div class="contextMenu_container">
-              <img class="template_icon" src="../common/icons/toggle.svg" alt="toggle"></img>
-            </div>
-          </section>`;
+        <div class="dhx-diagram-demo_personal-card">
+          <div class="dhx-diagram-demo_personal-card__container dhx-diagram-demo_personal-card__img-container">
+            <img src="${photo}" alt="${name}-${post}"></img>
+          </div>
+          <div class="dhx-diagram-demo_personal-card__container">
+            <h3>${name}</h3>
+            <p>${post}</p>
+            <span class="dhx-diagram-demo_personal-card__info">
+              <i class="mdi mdi-cellphone-android"></i>
+              <p>${phone}</p>
+            </span>
+            <span class="dhx-diagram-demo_personal-card__info">
+              <i class="mdi mdi-email-outline"></i>
+              <a href="mailto:${mail}" target="_blank">${mail}</a>
+            </span>
+          </div>
+        </div>
+        `;
     },
   },
   computed: {
@@ -190,58 +132,55 @@ export default {
 };
 </script>
 
-<style scoped>
-/deep/ .template {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  background: white;
-  color: rgba(0, 0, 0, 0.7);
-  border: 1px solid #dfdfdf;
-  padding: 10px 0 10px 10px;
-}
-/deep/ .template span {
-  display: flex;
-}
-/deep/ .template h3,
-.template p {
-  text-align: left;
-  font-size: 14px;
-  line-height: 20px;
-  height: 20px;
-  margin: 0 0 4px 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-/deep/ .template_container {
-  height: 100%;
-  width: 90%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-/deep/.template_img-container {
-  min-width: 93px;
-  width: 93px;
-  margin-right: 12px;
-}
-/deep/ .template_img-container img {
-  width: inherit;
-  height: auto;
-}
-/deep/ .template_icon {
-  height: 20px;
-  width: 20px;
-  margin-right: 4px;
-}
-/deep/ .contextMenu_container {
-  width: 10%;
-  cursor: pointer;
-}
-/deep/ .contextMenu_container .template_icon {
-  height: 14px;
-  width: 4px;
-  margin: 0;
-}
+<style>
+  .dhx-diagram-demo_personal-card {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    color: rgba(0, 0, 0, 0.7);
+    border: 1px solid #DFDFDF;
+    padding: 10px 12px;
+  }
+  .dhx-diagram-demo_personal-card i {
+    color: rgba(0, 0, 0, 0.7);
+		height: 20px;
+		width: 20px;
+		font-size: 18px;
+  }
+  .dhx-diagram-demo_personal-card__info {
+    display: flex;
+  }
+  .dhx-diagram-demo_personal-card__info a {
+    color:#0288D1
+  }
+  .dhx-diagram-demo_personal-card__container {
+    height: 100%;
+		width: 100%;
+		overflow: hidden;
+		position: relative;
+  }
+  .dhx-diagram-demo_personal-card__container h3, .dhx-diagram-demo_personal-card__container p {
+    text-align: left;
+    font-size: 14px;
+    line-height: 20px;
+    height: 20px;
+    margin: 0 0 4px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .dhx-diagram-demo_personal-card__container i {
+    margin-right: 4px;
+  }
+  .dhx-diagram-demo_personal-card__img-container {
+    min-width: 93px;
+		width: 93px;
+		margin-right: 12px;
+  }
+  .dhx-diagram-demo_personal-card__img-container img {
+    width: inherit;
+    height: auto;
+  }
 </style>

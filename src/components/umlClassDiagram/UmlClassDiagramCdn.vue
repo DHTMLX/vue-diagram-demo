@@ -82,9 +82,9 @@ export default {
     },
     template(config) {
       return `
-          <section class="template" style="background: ${config.fill}; border: ${config.strokeWidth}px solid ${config.stroke}">
+          <section class="dhx-diagram-demo_uml" style="background: ${config.fill}; border: ${config.strokeWidth}px solid ${config.stroke}">
             <h3 style="border-bottom: ${config.strokeWidth}px solid ${config.stroke}">${config.title}</h3>
-            <ul><li>${config.text.join("</li><li>")}"</li></ul>
+            <ul><li>${config.text.join("</li><li>")}</li></ul>
 					</section>
         `;
     },
@@ -105,24 +105,24 @@ export default {
 };
 </script>
 
-<style scoped>
-/deep/ .template {
-  height: 100%;
-  border-radius: 10px;
-  overflow: hidden;
-}
-/deep/ .template h3 {
-  text-align: center;
-  height: 40px;
-  line-height: 40px;
-}
-/deep/ .template ul {
-  padding: 8px 5px 5px 5px;
-}
-/deep/ .template li {
-  text-align: left;
-  list-style-type: circle;
-  margin: 5px 0 0 20px;
-  white-space: nowrap;
-}
+<style>
+  .dhx-diagram-demo_uml {
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .dhx-diagram-demo_uml h3 {
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+  }
+  .dhx-diagram-demo_uml ul {
+    padding: 8px 5px 5px 5px;
+  }
+  .dhx-diagram-demo_uml li {
+    text-align: left;
+    list-style-type: circle;
+    margin: 5px 0 0 20px;
+    white-space: nowrap;
+  }
 </style>

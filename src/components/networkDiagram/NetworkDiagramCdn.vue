@@ -87,7 +87,7 @@ export default {
     },
     template(config) {
       return `
-          <section class="template">
+          <section class="dhx-diagram-demo_network-card">
             <img src="${config.img}" alt="${config.text}"></img>
             <span>${config.text}</span>
             <span>${config.ip}</span>
@@ -111,35 +111,35 @@ export default {
 };
 </script>
 
-<style scoped>
-/deep/ .template {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  background: #f7f7f7;
-  width: 100%;
-  height: 100%;
-  border: 1px solid #dfdfdf;
-  overflow: hidden;
-}
-/deep/ .template span {
-  font-weight: 300;
-  line-height: 20px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  width: 100%;
-  text-align: center;
-}
-/deep/ .template span:not(:last-child) {
-  font-weight: 500;
-  margin-top: 16px;
-}
-/deep/ .template img {
-  width: 64px;
-  height: 64px;
-  pointer-events: none;
-  border-radius: 50%;
-}
+<style>
+  .dhx-diagram-demo_network-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #f7f7f7;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #dfdfdf;
+    overflow: hidden;
+  }
+  .dhx-diagram-demo_network-card span {
+    font-weight: 300;
+    line-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    text-align: center;
+  }
+  .dhx-diagram-demo_network-card span:not(:last-child) {
+    font-weight: 500;
+    margin-top: 16px;
+  }
+  .dhx-diagram-demo_network-card img {
+    width: 64px;
+    height: 64px;
+    pointer-events: none;
+    border-radius: 50%;
+  }
 </style>

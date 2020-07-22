@@ -95,7 +95,7 @@ export default {
     },
     template(config) {
       return `
-          <section class="template" style="background-image: url('${config.background}')">
+          <section class="dhx-diagram-demo_life-cycle" style="background-image: url('${config.background}')">
             <span>${config.text}</span>
           </section>
           `;
@@ -117,21 +117,21 @@ export default {
 };
 </script>
 
-<style scoped>
-/deep/ .template {
-  height: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 500;
-  overflow: hidden;
-}
-/deep/ .template span {
-  text-align: center;
-  word-wrap: break-word;
-  white-space: pre-wrap;
-}
+<style>
+  .dhx-diagram-demo_life-cycle {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    overflow: hidden;
+  }
+  .dhx-diagram-demo_life-cycle span {
+    text-align: center;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+  }
 </style>
