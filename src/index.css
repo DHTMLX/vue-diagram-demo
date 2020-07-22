@@ -5,31 +5,46 @@
 	box-sizing: border-box;
 }
 
+html, body, #root {
+	height: 100%;
+}
+
 .dhx-container {
+	height: 100%;
 	background-color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
 }
 
 .dhx-container_header {
+	height: 60px;
 	text-align: center;
 }
 
-.dhx-container a {
+.dhx-container_header a {
   cursor: pointer;
 	text-decoration: none;
   color: #0288d1;
   margin-bottom: 15px;
 }
 
-.dhx-container h3 {
+.dhx-container_header h3 {
   color: rgba(0, 0, 0, 0.7);
 }
 
-.dhx-container .inner {
-	width: 100%;
+.dhx-container_inner {
+	height: calc(100% - 60px);
+}
+
+.dhx_sample-container__with-editor,
+.dhx_sample-container__without-editor {
+	height: 100%;
+}
+
+.dhx_sample-container__with-editor .dhx_sample-widget {
+	height: 100%;
+}
+
+.dhx_sample-container__without-editor .dhx_sample-container__widget.overflow_hidden .dhx_diagram.dhx_widget .dhx_diagram__container.dhx_free_diagram {
+	overflow: hidden !important;
 }
 
 .dhx_sample-controls {

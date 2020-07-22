@@ -1,24 +1,24 @@
-import AutoplacementCdn from "../components/autoplacement/AutoplacementCdn";
+import NetworkDiagramCdn from "../components/networkDiagram/NetworkDiagramCdn";
 
 export default {
-  title: "Autoplacement",
+  title: "Network Diagram",
 };
 
 export const base = () => ({
-  components: { AutoplacementCdn },
+  components: { NetworkDiagramCdn },
   template: `
     <section class="dhx-container">
       <div class="dhx-container_header">
         <h3>Basic initialization</h3>
         <a
           class="source-link"
-          href="https://github.com/DHTMLX/vue-diagram-demo/blob/master/src/components/autoplacement/AutoplacementCdn.vue"
+          href="https://github.com/DHTMLX/vue-diagram-demo/blob/master/src/components/networkDiagram/NetworkDiagramCdn.vue"
           target="_blank"
         >
           Source code
         </a>
       </div>
-      <AutoplacementCdn></AutoplacementCdn>
+      <NetworkDiagramCdn></NetworkDiagramCdn>
     </section>
   `,
 });

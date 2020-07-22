@@ -5,7 +5,7 @@ const theme = create({
   base: "light",
   brandTitle: "dhtmlxDiagram",
   brandUrl: "https://dhtmlx.github.io/vue-diagram-demo/?path=/story",
-  // brandImage: "./logo.svg",
+  brandImage: "./logo.svg",
 });
 
 addons.setConfig({

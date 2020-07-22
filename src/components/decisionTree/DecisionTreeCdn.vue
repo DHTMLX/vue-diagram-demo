@@ -13,59 +13,40 @@
 <script>
 import fromCDN from "from-cdn";
 export default {
-  name: "ActivityDiagramCdn",
+  name: "DecisionTreeCdn",
   data: () => ({
     diagram: null,
     editor: null,
     collapsed: true,
     expanded: false,
     defaults: {
-      start: {
-        fill: "#FE9998",
-        stroke: "#FE9998",
-        fontColor: "#FFF",
-        lineHeight: 16
+      rectangle: {
+        fill: "#44B3FC",
+        stroke: "#44B3FC"
       },
-      end: {
-        fill: "#FE9998",
-        stroke: "#FE9998",
-        fontColor: "#FFF",
-        lineHeight: 16
+      circle: {
+        fill: "#3DA0E3",
+        stroke: "#3DA0E3"
       },
-      process: {
-        fill: "#478D99",
-        stroke: "#478D99",
-        fontColor: "#FFF",
-        lineHeight: 16
-      },
-      decision: {
-        fill: "#F7D768",
-        stroke: "#F7D768",
-        fontColor: "#FFF",
-        lineHeight: 16
-      },
-      document: {
-        fill: "#478D99",
-        stroke: "#478D99",
-        fontColor: "#FFF",
-        lineHeight: 16
+      endpoint: {
+        fill: "#307DB0",
+        stroke: "#307DB0"
       }
-    },
+    }
   }),
   mounted() {
     fromCDN(["https://cdn.dhtmlx.com/diagram/pro/edge/diagramWithEditor.js", "https://cdn.dhtmlx.com/diagram/pro/edge/diagramWithEditor.css"]).then(() => {
       // eslint-disable-next-line no-undef
       this.diagram = new dhx.Diagram(this.$refs.diagram, {
-        lineGap: 30,
-				defaults: this.defaults,
+				lineGap: 40,
+				defaults: this.defaults
       });
-      this.diagram.data.load("./static/activity.json");
-      // eslint-disable-next-line no-undef
-      this.editor = new dhx.DiagramEditor(this.$refs.editor, {
-        controls: { autoLayout: false },
-				lineGap: 30,
-      });
+      this.diagram.data.load("./static/decisionTree.json");
 
+			// eslint-disable-next-line no-undef
+			this.editor = new dhx.DiagramEditor(this.$refs.editor, {
+				controls: { autoLayout: false },
+			});
       this.editor.events.on("ApplyButton", () => {
 				this.applyButton();
 			});

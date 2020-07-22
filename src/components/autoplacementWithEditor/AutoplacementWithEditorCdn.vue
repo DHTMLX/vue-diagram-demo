@@ -4,7 +4,7 @@
       <button class="dhx_sample-btn dhx_sample-btn--flat" @click="runEditor()">Edit</button>
     </div>
     <div v-bind:class="classObject">
-      <div class="dhx_sample-widget" ref="diagram" v-show="collapsed"></div>
+      <div class="dhx_sample-container__widget" ref="diagram" v-show="collapsed"></div>
       <div class="dhx_sample-widget" ref="editor" v-show="expanded"></div>
     </div>
   </div>
@@ -13,59 +13,26 @@
 <script>
 import fromCDN from "from-cdn";
 export default {
-  name: "ActivityDiagramCdn",
+  name: "AutoplacementWithEditorCdn",
   data: () => ({
     diagram: null,
     editor: null,
     collapsed: true,
     expanded: false,
-    defaults: {
-      start: {
-        fill: "#FE9998",
-        stroke: "#FE9998",
-        fontColor: "#FFF",
-        lineHeight: 16
-      },
-      end: {
-        fill: "#FE9998",
-        stroke: "#FE9998",
-        fontColor: "#FFF",
-        lineHeight: 16
-      },
-      process: {
-        fill: "#478D99",
-        stroke: "#478D99",
-        fontColor: "#FFF",
-        lineHeight: 16
-      },
-      decision: {
-        fill: "#F7D768",
-        stroke: "#F7D768",
-        fontColor: "#FFF",
-        lineHeight: 16
-      },
-      document: {
-        fill: "#478D99",
-        stroke: "#478D99",
-        fontColor: "#FFF",
-        lineHeight: 16
-      }
-    },
   }),
   mounted() {
     fromCDN(["https://cdn.dhtmlx.com/diagram/pro/edge/diagramWithEditor.js", "https://cdn.dhtmlx.com/diagram/pro/edge/diagramWithEditor.css"]).then(() => {
       // eslint-disable-next-line no-undef
-      this.diagram = new dhx.Diagram(this.$refs.diagram, {
-        lineGap: 30,
-				defaults: this.defaults,
-      });
-      this.diagram.data.load("./static/activity.json");
+      this.diagram = new dhx.Diagram(this.$refs.diagram);
+      this.diagram.data.load("./static/autoplacement.json");
+
       // eslint-disable-next-line no-undef
       this.editor = new dhx.DiagramEditor(this.$refs.editor, {
-        controls: { autoLayout: false },
-				lineGap: 30,
-      });
-
+				autoplacement: {
+					graphPadding: 100,
+					mode: "direct"
+				}
+			});
       this.editor.events.on("ApplyButton", () => {
 				this.applyButton();
 			});
