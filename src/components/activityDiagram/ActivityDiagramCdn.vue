@@ -24,58 +24,61 @@ export default {
         fill: "#FE9998",
         stroke: "#FE9998",
         fontColor: "#FFF",
-        lineHeight: 16
+        lineHeight: 16,
       },
       end: {
         fill: "#FE9998",
         stroke: "#FE9998",
         fontColor: "#FFF",
-        lineHeight: 16
+        lineHeight: 16,
       },
       process: {
         fill: "#478D99",
         stroke: "#478D99",
         fontColor: "#FFF",
-        lineHeight: 16
+        lineHeight: 16,
       },
       decision: {
         fill: "#F7D768",
         stroke: "#F7D768",
         fontColor: "#FFF",
-        lineHeight: 16
+        lineHeight: 16,
       },
       document: {
         fill: "#478D99",
         stroke: "#478D99",
         fontColor: "#FFF",
-        lineHeight: 16
-      }
+        lineHeight: 16,
+      },
     },
   }),
   mounted() {
-    fromCDN(["https://cdn.dhtmlx.com/diagram/pro/edge/diagramWithEditor.js", "https://cdn.dhtmlx.com/diagram/pro/edge/diagramWithEditor.css"]).then(() => {
+    fromCDN([
+      "https://cdn.dhtmlx.com/diagram/pro/edge/diagramWithEditor.js",
+      "https://cdn.dhtmlx.com/diagram/pro/edge/diagramWithEditor.css",
+    ]).then(() => {
       // eslint-disable-next-line no-undef
       this.diagram = new dhx.Diagram(this.$refs.diagram, {
         lineGap: 30,
-				defaults: this.defaults,
+        defaults: this.defaults,
       });
       this.diagram.data.load("./static/activity.json");
       // eslint-disable-next-line no-undef
       this.editor = new dhx.DiagramEditor(this.$refs.editor, {
         controls: { autoLayout: false },
-				lineGap: 30,
+        lineGap: 30,
       });
 
       this.editor.events.on("ApplyButton", () => {
-				this.applyButton();
-			});
-			this.editor.events.on("ResetButton", () => {
-				this.resetButton();
-			});
+        this.applyButton();
+      });
+      this.editor.events.on("ResetButton", () => {
+        this.resetButton();
+      });
     });
   },
   methods: {
-		runEditor() {
+    runEditor() {
       this.expanded = true;
       this.collapsed = false;
       this.editor.import(this.diagram);
@@ -88,15 +91,15 @@ export default {
     resetButton() {
       this.collapsed = true;
       this.expanded = false;
-    }
+    },
   },
   computed: {
     classObject: function () {
       return {
-        'dhx_sample-container__with-editor': this.expanded && !this.collapsed,
-        'dhx_sample-container__without-editor': this.collapsed && !this.expanded
-      }
-    }
+        "dhx_sample-container__with-editor": this.expanded && !this.collapsed,
+        "dhx_sample-container__without-editor": this.collapsed && !this.expanded,
+      };
+    },
   },
   beforeDestroy() {
     if (this.diagram) {

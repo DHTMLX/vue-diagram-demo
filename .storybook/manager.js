@@ -11,5 +11,5 @@ const theme = create({
 addons.setConfig({
   showPanel: false,
   enableShortcuts: false,
-  theme
+  theme,
 });

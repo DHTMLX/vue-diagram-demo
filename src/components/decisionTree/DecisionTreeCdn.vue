@@ -22,41 +22,44 @@ export default {
     defaults: {
       rectangle: {
         fill: "#44B3FC",
-        stroke: "#44B3FC"
+        stroke: "#44B3FC",
       },
       circle: {
         fill: "#3DA0E3",
-        stroke: "#3DA0E3"
+        stroke: "#3DA0E3",
       },
       endpoint: {
         fill: "#307DB0",
-        stroke: "#307DB0"
-      }
-    }
+        stroke: "#307DB0",
+      },
+    },
   }),
   mounted() {
-    fromCDN(["https://cdn.dhtmlx.com/diagram/pro/edge/diagramWithEditor.js", "https://cdn.dhtmlx.com/diagram/pro/edge/diagramWithEditor.css"]).then(() => {
+    fromCDN([
+      "https://cdn.dhtmlx.com/diagram/pro/edge/diagramWithEditor.js",
+      "https://cdn.dhtmlx.com/diagram/pro/edge/diagramWithEditor.css",
+    ]).then(() => {
       // eslint-disable-next-line no-undef
       this.diagram = new dhx.Diagram(this.$refs.diagram, {
-				lineGap: 40,
-				defaults: this.defaults
+        lineGap: 40,
+        defaults: this.defaults,
       });
       this.diagram.data.load("./static/decisionTree.json");
 
-			// eslint-disable-next-line no-undef
-			this.editor = new dhx.DiagramEditor(this.$refs.editor, {
-				controls: { autoLayout: false },
-			});
+      // eslint-disable-next-line no-undef
+      this.editor = new dhx.DiagramEditor(this.$refs.editor, {
+        controls: { autoLayout: false },
+      });
       this.editor.events.on("ApplyButton", () => {
-				this.applyButton();
-			});
-			this.editor.events.on("ResetButton", () => {
-				this.resetButton();
-			});
+        this.applyButton();
+      });
+      this.editor.events.on("ResetButton", () => {
+        this.resetButton();
+      });
     });
   },
   methods: {
-		runEditor() {
+    runEditor() {
       this.expanded = true;
       this.collapsed = false;
       this.editor.import(this.diagram);
@@ -69,15 +72,15 @@ export default {
     resetButton() {
       this.collapsed = true;
       this.expanded = false;
-    }
+    },
   },
   computed: {
     classObject: function () {
       return {
-        'dhx_sample-container__with-editor': this.expanded && !this.collapsed,
-        'dhx_sample-container__without-editor': this.collapsed && !this.expanded
-      }
-    }
+        "dhx_sample-container__with-editor": this.expanded && !this.collapsed,
+        "dhx_sample-container__without-editor": this.collapsed && !this.expanded,
+      };
+    },
   },
   beforeDestroy() {
     if (this.diagram) {

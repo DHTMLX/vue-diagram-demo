@@ -1,27 +1,29 @@
 * {
-	margin: 0;
-	padding: 0;
-	font-family: "Roboto", sans-serif;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
 }
 
-html, body, #root {
-	height: 100%;
+html,
+body,
+#root {
+  height: 100%;
 }
 
 .dhx-container {
-	height: 100%;
-	background-color: #fff;
+  height: 100%;
+  background-color: #fff;
 }
 
 .dhx-container_header {
-	height: 60px;
-	text-align: center;
+  height: 60px;
+  text-align: center;
 }
 
 .dhx-container_header a {
   cursor: pointer;
-	text-decoration: none;
+  text-decoration: none;
   color: #0288d1;
   margin-bottom: 15px;
 }
@@ -31,50 +33,53 @@ html, body, #root {
 }
 
 .dhx-container_inner {
-	height: calc(100% - 60px);
+  height: calc(100% - 60px);
 }
 
 .dhx_sample-container__with-editor,
 .dhx_sample-container__without-editor {
-	height: 100%;
+  height: 100%;
 }
 
 .dhx_sample-container__with-editor .dhx_sample-widget {
-	height: 100%;
+  height: 100%;
 }
 
-.dhx_sample-container__without-editor .dhx_sample-container__widget.overflow_hidden .dhx_diagram.dhx_widget .dhx_diagram__container.dhx_free_diagram {
-	overflow: hidden !important;
+.dhx_sample-container__without-editor
+  .dhx_sample-container__widget.overflow_hidden
+  .dhx_diagram.dhx_widget
+  .dhx_diagram__container.dhx_free_diagram {
+  overflow: hidden !important;
 }
 
 .dhx_sample-controls {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
 }
 
 /* Buttons */
 .dhx_sample-btn {
-	border: none;
-	outline: none;
-	padding: 6px 16px;
-	border-radius: 2px;
-	font-size: 14px;
-	line-height: 20px;
-	font-weight: 500;
-	text-transform: uppercase;
-	cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 6px 16px;
+  border-radius: 2px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
 }
 .dhx_sample-btn--flat {
-	background: #0288d1;
-	color: #fff;
+  background: #0288d1;
+  color: #fff;
 }
 .dhx_sample-btn--flat:hover {
-	background-color: #35a0da;
-	transition: background-color .2s ease-out;
+  background-color: #35a0da;
+  transition: background-color 0.2s ease-out;
 }
 
 .dhx_diagram {
-	background-color: #fff !important;
+  background-color: #fff !important;
 }
