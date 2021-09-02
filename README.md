@@ -1,5 +1,5 @@
 <p align="center">
-	<a href="https://dhtmlx.github.io/vue-suite-demo/?path=/story/calendar--base"><img src="https://raw.githubusercontent.com/DHTMLX/vue-suite-demo/master/public/Logo.svg" width="150" height="55"></a>
+	<a href="https://dhtmlx.github.io/vue-diagram-demo/?path=/story/org-chart-editor--img-card"><img src="https://raw.githubusercontent.com/DHTMLX/vue-suite-demo/master/public/Logo.svg" width="150" height="55"></a>
 </p>
 
 # DHTMLX Diagram + Vue
