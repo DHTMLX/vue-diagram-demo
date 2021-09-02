@@ -3,11 +3,11 @@
 </template>
 
 <script>
-  export default {
-    name: "App",
-  };
+export default {
+  name: "App",
+};
 </script>
 
 <style>
-  @import "./index.css";
+@import "./index.css";
 </style>
