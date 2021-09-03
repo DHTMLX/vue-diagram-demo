@@ -1,4 +1,4 @@
-import MindmapEditor from "../components/MindmapEditor"
+import MindmapEditor from "../components/MindmapEditor";
 
 export default {
   title: "Mindmap Editor",

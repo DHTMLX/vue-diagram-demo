@@ -27,47 +27,48 @@ export default {
       // eslint-disable-next-line no-undef
       this.diagram = new dhx.Diagram(this.$refs.diagram, {
         type: "org",
-				defaultShapeType: "template"
+        defaultShapeType: "template",
       });
 
       // eslint-disable-next-line no-undef
       this.editor = new dhx.DiagramEditor(this.$refs.editor, {
-				type: "org",
-				shapeType: "template",
-				controls: { 
-					gridStep: false
-				},
+        type: "org",
+        shapeType: "template",
+        controls: {
+          gridStep: false,
+        },
       });
 
       this.diagram.addShape("template", {
-				template: this.template,
-				defaults: {
-					height: 115,
-					width: 330
-				},
-			});
+        template: this.template,
+        defaults: {
+          height: 115,
+          width: 330,
+        },
+      });
 
-			this.editor.diagram.addShape("template", {
-				template: this.template,
-				defaults: {
-					name: "Name and First name",
-					post: "Position held",
-					phone: "(405) 000-00-00",
-					mail: "some@mail.com",
-					photo: "../common/big_img/big-avatar-1.jpg",
+      this.editor.diagram.addShape("template", {
+        template: this.template,
+        defaults: {
+          name: "Name and First name",
+          post: "Position held",
+          phone: "(405) 000-00-00",
+          mail: "some@mail.com",
+          photo: "../common/big_img/big-avatar-1.jpg",
 
-					height: 115, width: 330
-				},
-				properties: [
-					{ type: "position" },
-					{ type: "size" },
-					{ type: "text", label: "Name", property: "name" },
-					{ type: "text", label: "Post", property: "post" },
-					{ type: "text", label: "Phone", property: "phone" },
-					{ type: "text", label: "Mail", property: "mail" },
-					{ type: "img", label: "Photo",  property: "photo" }
-				],
-			});
+          height: 115,
+          width: 330,
+        },
+        properties: [
+          { type: "position" },
+          { type: "size" },
+          { type: "text", label: "Name", property: "name" },
+          { type: "text", label: "Post", property: "post" },
+          { type: "text", label: "Phone", property: "phone" },
+          { type: "text", label: "Mail", property: "mail" },
+          { type: "img", label: "Photo", property: "photo" },
+        ],
+      });
 
       this.editor.events.on("ApplyButton", () => {
         this.applyButton();
@@ -138,76 +139,73 @@ export default {
 </script>
 
 <style>
-  html, body, .dhx_diagram {
-    background: #fff;
-  }
-  .dhx_diagram_template_a_box {
-    background-color: transparent;
-  }
-  .dhx_diagram_template_a_box {
-    padding: 0;
-    border: 1px solid #dfdfdf;
-    background-color: #fff;
-    overflow: hidden;
-  }
-  .dhx_diagram_template_a {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    width: 100%;
-    height: 100%;
-    padding: 12px;
-  }
-  .dhx_diagram_template_a__inside {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    width: 100%;
-  }
-  .dhx_diagram_template_a__picture {
-    width: 90px;
-    min-width: 90px;
-    background: center center/cover no-repeat #f7f7f7;
-  }
-  .dhx_diagram_template_a__picture:before {
-    content: "";
-    display: block;
-    padding-top: 100%;
-  }
-  .dhx_diagram_template_a__body {
-    padding-left: 12px;
-    min-width: 200px;
-  }
-  .dhx_diagram_template_a__title,
-  .dhx_diagram_template_a__text {
-    font: normal 14px/20px Roboto, sans-serif;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
-  .dhx_diagram_template_a__title {
-    text-align: start;
-    color: rgba(0, 0, 0, 0.7);
-    font-weight: 500;
-  }
-  .dhx_diagram_template_a__row {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    margin: 4px 0;
-  }
-  .dhx_diagram_template_a__icon {
-    font-size: 18px;
-    margin-right: 4px;
-    color: rgba(0, 0, 0, 0.7);
-  }
-  .dhx_diagram_template_a__text {
-    color: rgba(0, 0, 0, 0.7);
-  }
-  .dhx_diagram_template_a__link {
-    color: #0288d1;
-  }
+.dhx_diagram_template_a_box {
+  background-color: transparent;
+}
+.dhx_diagram_template_a_box {
+  padding: 0;
+  border: 1px solid #dfdfdf;
+  background-color: #fff;
+  overflow: hidden;
+}
+.dhx_diagram_template_a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+}
+.dhx_diagram_template_a__inside {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+.dhx_diagram_template_a__picture {
+  width: 90px;
+  min-width: 90px;
+  background: center center/cover no-repeat #f7f7f7;
+}
+.dhx_diagram_template_a__picture:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+.dhx_diagram_template_a__body {
+  padding-left: 12px;
+  min-width: 200px;
+}
+.dhx_diagram_template_a__title,
+.dhx_diagram_template_a__text {
+  font: normal 14px/20px Roboto, sans-serif;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.dhx_diagram_template_a__title {
+  text-align: start;
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 500;
+}
+.dhx_diagram_template_a__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 4px 0;
+}
+.dhx_diagram_template_a__icon {
+  font-size: 18px;
+  margin-right: 4px;
+  color: rgba(0, 0, 0, 0.7);
+}
+.dhx_diagram_template_a__text {
+  color: rgba(0, 0, 0, 0.7);
+}
+.dhx_diagram_template_a__link {
+  color: #0288d1;
+}
 </style>

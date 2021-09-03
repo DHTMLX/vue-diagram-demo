@@ -20,15 +20,15 @@ export default {
     expanded: false,
     path: "./common/img/network/",
     defaults: {
-        width: 160,
-        height: 160,
-        img: "./common/img/network/desktop.svg",
-        text: "Network Card",
-        ip: "138.68.41.78",
-        preview: {
-          scale: 0.8
-        }
-    }
+      width: 160,
+      height: 160,
+      img: "./common/img/network/desktop.svg",
+      text: "Network Card",
+      ip: "138.68.41.78",
+      preview: {
+        scale: 0.8,
+      },
+    },
   }),
   mounted() {
     fromCDN([
@@ -49,17 +49,18 @@ export default {
 
       // eslint-disable-next-line no-undef
       this.editor = new dhx.DiagramEditor(this.$refs.editor, {
+        type: "default",
         controls: { autoLayout: false },
         shapeSections: {
           "Network Shapes": [core, server, cloud, user, desktop],
         },
         shapeBarWidth: 320,
-        lineGap: 20
+        lineGap: 20,
       });
 
       this.diagram.addShape("networkCard", {
         template: this.template,
-        defaults: this.defaults
+        defaults: this.defaults,
       });
 
       this.editor.diagram.addShape("networkCard", {
@@ -92,7 +93,7 @@ export default {
           <span>${text}</span>
           <span>${ip}</span>
         </section>
-      `
+      `;
     },
     runEditor() {
       this.expanded = true;
@@ -131,10 +132,10 @@ export default {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background: #F7F7F7;
+    background: #f7f7f7;
     width: 100%;
     height: 100%;
-    border: 1px solid #DFDFDF;
+    border: 1px solid #dfdfdf;
     overflow: hidden;
   }
   .dhx-diagram-demo_network-card span {

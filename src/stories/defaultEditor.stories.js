@@ -7,7 +7,7 @@ export default {
   title: "Default Editor",
 };
 
-export const autoplacement = () => ({
+export const Autoplacement = () => ({
   components: { DefaultEditorAutoplacement },
   template: `
     <section class="dhx-container">
@@ -26,7 +26,7 @@ export const autoplacement = () => ({
   `,
 });
 
-export const customShape = () => ({
+export const CustomShape = () => ({
   components: { DefaultEditorCustomShape },
   template: `
     <section class="dhx-container">
@@ -45,7 +45,7 @@ export const customShape = () => ({
   `,
 });
 
-export const group = () => ({
+export const Group = () => ({
   components: { DefaultEditorGroup },
   template: `
     <section class="dhx-container">
@@ -64,7 +64,7 @@ export const group = () => ({
   `,
 });
 
-export const swimlane = () => ({
+export const Swimlane = () => ({
   components: { DefaultEditorSwimlane },
   template: `
     <section class="dhx-container">

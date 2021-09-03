@@ -23,15 +23,14 @@ export default {
         width: 115,
         height: 120,
         text: "description",
-      }
-    }
+      },
+    },
   }),
   mounted() {
     fromCDN([
       "https://cdn.dhtmlx.com/diagram/pro/edge/diagramWithEditor.js",
       "https://cdn.dhtmlx.com/diagram/pro/edge/diagramWithEditor.css",
     ]).then(() => {
-
       const path = "./common/img/it/";
       const extension = ".png";
 
@@ -100,7 +99,7 @@ export default {
 
       this.diagram.addShape("template", {
         template: this.template,
-        defaults: this.defaults
+        defaults: this.defaults,
       });
 
       this.editor.diagram.addShape("template", {
@@ -130,7 +129,7 @@ export default {
           <div class="dhx-diagram-demo_group__image" style="background-image:url(${img});"></div>
           <div class="dhx-diagram-demo_group__text">${text}</div>
         </div>
-      `
+      `;
     },
     runEditor() {
       this.expanded = true;

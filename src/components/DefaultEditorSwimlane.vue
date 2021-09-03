@@ -3,7 +3,7 @@
     <div class="dhx_sample-controls" v-show="collapsed">
       <button class="dhx_sample-btn dhx_sample-btn--flat" @click="runEditor()">Edit</button>
       <button class="dhx_sample-btn dhx_sample-btn--flat" @click="exportPng()">Export PNG</button>
-			<button class="dhx_sample-btn dhx_sample-btn--flat" @click="exportPdf()">Export PDF</button>
+      <button class="dhx_sample-btn dhx_sample-btn--flat" @click="exportPdf()">Export PDF</button>
     </div>
     <div class="dhx_sample-widget overflow_hidden" ref="diagram" v-show="collapsed"></div>
     <div class="dhx_sample-widget" ref="editor" v-show="expanded"></div>
@@ -39,7 +39,7 @@ export default {
         fontColor: "#4C4C4C",
         strokeWidth: 2,
       },
-    }
+    },
   }),
   mounted() {
     fromCDN([
@@ -48,8 +48,8 @@ export default {
     ]).then(() => {
       // eslint-disable-next-line no-undef
       this.diagram = new dhx.Diagram(this.$refs.diagram, {
-				type: "default",
-				defaults: this.defaults,
+        type: "default",
+        defaults: this.defaults,
       });
 
       // eslint-disable-next-line no-undef

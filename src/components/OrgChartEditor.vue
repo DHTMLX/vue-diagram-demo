@@ -19,8 +19,8 @@ export default {
     ]).then(() => {
       // eslint-disable-next-line no-undef
       this.editor = new dhx.DiagramEditor(this.$refs.editor, {
-				type: "org",
-				shapeType: "img-card",
+        type: "org",
+        shapeType: "img-card",
       });
       this.editor.parse(workers);
     });

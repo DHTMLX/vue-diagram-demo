@@ -19,10 +19,10 @@ export default {
     ]).then(() => {
       // eslint-disable-next-line no-undef
       this.editor = new dhx.DiagramEditor(this.$refs.editor, {
-				type: "default",
-				autoplacement: {
-					mode: "direct",
-				}
+        type: "default",
+        autoplacement: {
+          mode: "direct",
+        },
       });
       this.editor.parse(autoPlaceData);
     });
