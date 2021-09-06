@@ -19,7 +19,7 @@ export default {
     collapsed: true,
     expanded: false,
     defaults: {
-      template: {
+      it: {
         width: 115,
         height: 120,
         text: "description",
@@ -34,20 +34,20 @@ export default {
       const path = "./common/img/it/";
       const extension = ".png";
 
-      const it_01 = { type: "template", img: path + "it_01" + extension, ...this.defaults.template };
-      const it_02 = { type: "template", img: path + "it_02" + extension, ...this.defaults.template };
-      const it_03 = { type: "template", img: path + "it_03" + extension, ...this.defaults.template };
-      const it_04 = { type: "template", img: path + "it_04" + extension, ...this.defaults.template };
-      const it_05 = { type: "template", img: path + "it_05" + extension, ...this.defaults.template };
-      const it_06 = { type: "template", img: path + "it_06" + extension, ...this.defaults.template };
-      const it_07 = { type: "template", img: path + "it_07" + extension, ...this.defaults.template };
-      const it_08 = { type: "template", img: path + "it_08" + extension, ...this.defaults.template };
-      const it_09 = { type: "template", img: path + "it_09" + extension, ...this.defaults.template };
-      const it_10 = { type: "template", img: path + "it_10" + extension, ...this.defaults.template };
-      const it_11 = { type: "template", img: path + "it_11" + extension, ...this.defaults.template };
-      const it_12 = { type: "template", img: path + "it_12" + extension, ...this.defaults.template };
-      const it_13 = { type: "template", img: path + "it_13" + extension, ...this.defaults.template };
-      const it_14 = { type: "template", img: path + "it_14" + extension, ...this.defaults.template };
+      const it_01 = { type: "it", img: path + "it_01" + extension, ...this.defaults.it };
+      const it_02 = { type: "it", img: path + "it_02" + extension, ...this.defaults.it };
+      const it_03 = { type: "it", img: path + "it_03" + extension, ...this.defaults.it };
+      const it_04 = { type: "it", img: path + "it_04" + extension, ...this.defaults.it };
+      const it_05 = { type: "it", img: path + "it_05" + extension, ...this.defaults.it };
+      const it_06 = { type: "it", img: path + "it_06" + extension, ...this.defaults.it };
+      const it_07 = { type: "it", img: path + "it_07" + extension, ...this.defaults.it };
+      const it_08 = { type: "it", img: path + "it_08" + extension, ...this.defaults.it };
+      const it_09 = { type: "it", img: path + "it_09" + extension, ...this.defaults.it };
+      const it_10 = { type: "it", img: path + "it_10" + extension, ...this.defaults.it };
+      const it_11 = { type: "it", img: path + "it_11" + extension, ...this.defaults.it };
+      const it_12 = { type: "it", img: path + "it_12" + extension, ...this.defaults.it };
+      const it_13 = { type: "it", img: path + "it_13" + extension, ...this.defaults.it };
+      const it_14 = { type: "it", img: path + "it_14" + extension, ...this.defaults.it };
 
       const generalGroup = {
         type: "$group",
@@ -97,14 +97,14 @@ export default {
         },
       });
 
-      this.diagram.addShape("template", {
+      this.diagram.addShape("it", {
         template: this.template,
-        defaults: this.defaults,
+        defaults: this.defaults.it,
       });
 
-      this.editor.diagram.addShape("template", {
+      this.editor.diagram.addShape("it", {
         template: this.template,
-        defaults: this.defaults,
+        defaults: this.defaults.it,
         properties: [
           { type: "arrange" },
           { type: "text" },
