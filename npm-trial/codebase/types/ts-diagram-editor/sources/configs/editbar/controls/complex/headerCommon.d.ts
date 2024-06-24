@@ -1,0 +1,50 @@
+declare const _default: {
+    align: string;
+    cols: ({
+        type: string;
+        key: string;
+        padding: string;
+        icon: string;
+        offIcon: string;
+        text: string;
+        offText: string;
+        full: boolean;
+        width: number;
+        css?: undefined;
+        inputType?: undefined;
+        value?: undefined;
+        min?: undefined;
+    } | {
+        type: string;
+        key: string;
+        css: string;
+        padding: string;
+        width: string;
+        icon?: undefined;
+        offIcon?: undefined;
+        text?: undefined;
+        offText?: undefined;
+        full?: undefined;
+        inputType?: undefined;
+        value?: undefined;
+        min?: undefined;
+    } | {
+        type: string;
+        key: string;
+        inputType: string;
+        icon: string;
+        value: number;
+        min: number;
+        width: number;
+        padding?: undefined;
+        offIcon?: undefined;
+        text?: undefined;
+        offText?: undefined;
+        full?: undefined;
+        css?: undefined;
+    })[];
+    type: string;
+    compact: boolean;
+    $layout: (config: any) => any;
+};
+export default _default;

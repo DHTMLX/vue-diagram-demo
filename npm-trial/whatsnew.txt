@@ -1,0 +1,420 @@
+# Version 6.0 (May 16, 2024)
+
+### Breaking changes
+
+The new update introduces significant changes in the structure and functionality of Diagram and Diagram Editor. Check the migration article to keep in step with the latest version.
+
+### New functionality
+
+- Restructuring of Diagram Editor: providing the ability to interact with its parts and manage their visibility with the `view` property that includes the following configurations:
+	- Toolbar - a top part of Diagram Editor that helps users to control the editing process
+	- Shapebar - (former Left panel) a part of Diagram Editor that renders previews of Diagram items
+	- Editbar - (former Right panel) a part of Diagram Editor that allows users to edit Diagram items. You can perform the following actions:
+		- sets of predefined Basic controls and Complex controls
+		- adjustable configuration of Basic controls and Complex controls depending on the provided conditions
+		- dynamic management of the Editbar panel depending on the provided conditions ([Example](https://snippet.dhtmlx.com/ealq0m4l?mode=wide))
+		- creation of custom controls ([Example](https://snippet.dhtmlx.com/1p0wemnn?mode=wide))
+		- creation of HTML content ([Example](https://snippet.dhtmlx.com/vcnt647v?mode=wide))
+- Diagram Editor. The Copy manager API added
+- Diagram Editor. The ability to show/hide Shapebar, Editbar, Toolbar via View API
+- Diagram Editor. The destructor() method is added
+- Diagram Editor. The ability to hide the connection points
+- Diagram Editor. The ability to hide the resize points
+- Diagram Editor. The ability to hide the grid
+- The upgrade of the Selection API with the ability of multiple selection
+- The titles of lines are declared as separate objects defined as `lineTitles` with their own configuration properties
+- Supporting new themes: Dark, Light High Contrast and Dark High Contrast ([Example](https://snippet.dhtmlx.com/9twmlfus))
+- Diagram Editor. The ability to customize the Shapebar items' color scheme by redefining the CSS variables and using the custom ones
+
+### Updates
+
+- Diagram. The ability to work with line titles via the DataCollection API
+- Diagram Editor. The behavior of Shapebar items when they are pulled to the grid and their appearance are improved
+- Diagram Editor. The move events of the Editor object are updated: `afterGroupMove`, `afterItemCatch`, `afterItemMove`, `afterLineTitleMove`, `afterShapeMove`, `beforeGroupMove`, `beforeItemCatch`, `beforeItemMove`, `beforeLineTitleMove`, `beforeShapeMove`, `groupMoveEnd`, `itemMoveEnd`, `itemTarget`, `lineTitleMoveEnd`, `shapeMoveEnd
+- Diagram Editor. The callback function of `zoomIn`/`zoomOut` events is called with the `step` parameter
+- Diagram Editor. The functionality of the `magnetic` configuration option is extended
+- Diagram Editor. Locales are updated
+- Diagram Editor. The hotkeys list is extended
+
+### Deprecated API
+
+- #### Properties
+
+	- The `reservedWidth` property of Diagram Editor is deprecated and no longer supported
+	- The `editMode` property of Diagram Editor is deprecated and no longer supported
+	- The `controls` property of Diagram Editor is deprecated and no longer supported
+	- The `shapeBarWidth` property of Diagram Editor is deprecated and no longer supported
+	- The `shapeSections` property of Diagram Editor is deprecated and no longer supported
+	- The `gapPreview` property of Diagram Editor is deprecated and no longer supported
+	- The `scalePreview` property of Diagram Editor is deprecated and no longer supported
+
+- #### Methods
+
+	- The `setViewMode()` method of Diagram Editor is deprecated and no longer supported
+	- The `getSubId()` method of the Selection object of Diagram is deprecated and no longer supported
+	- The `getId()` method of the Selection object of Diagram is deprecated and no longer supported
+
+- #### Events
+
+	- The following events of Diagram Editor are deprecated and no longer supported, since there are no corresponding buttons in the toolbar: `resetButton`, `applyButton`, `visibility`, `exportData`, `importData`, `autoLayout`
+	- The `changeGridStep` event of Diagram Editor is deprecated and no longer supported
+
+### Fixes
+
+- Fix the localization with complex widgets
+- Diagram Editor. Fix the impossibility to remove selected items via menu in the **mindmap** and **org** modes
+- Diagram Editor. Fix incorrect selection behavior that required an additional click for selecting a shape with the Shift key
+- Diagram Editor. Fix the ability to move items of different parents to the target item (for the **org** and **mindmap** modes)
+- Diagram Editor. Fix moving a group and a swimlane together
+- Diagram Editor. Fix copying of lines while selecting elements manually
+- Diagram Editor. Fix the ability to set default values for the Shapebar elements
+- Diagram Editor. Fix the issue with data import working just once
+- Diagram Editor. Fix blocking of a new shape adding
+- Diagram Editor. Optimize the logic of searching for the nearest connector
+- Diagram Editor. Improve performance during the connector movement
+- Diagram Editor. Limit the recording of actions during the connector movement in the **historyManager**
+- Diagram Editor. Fix the appearance of connectors on hovering moved items above any shape
+- Diagram Editor. Fix removing of unused lines/connectors
+- Diagram Editor. Fix dragging when the root shape is close to the child one in the **mindmap/org** modes
+- Diagram Editor. Fix a console error caused by clicking the "Import data" button for a second time after data import and not selecting a file
+
+# Version 5.0.2 (May 30, 2023)
+
+### Fixes
+
+- Diagram Editor. Fix the issue with custom points not moving during a multi select move
+- Diagram Editor. Fix the impossibility to link a shape to itself
+- Fix the problem with exporting a default diagram without [exportStyles](/diagram/api/diagram/exportstyles_property/)
+- Fix the issue with the promiz.js library that caused an error with the `setImmediate()` method definition on importing the sources
+- Fix path formation of the URL in the Export object
+- Types for export are added
+
+# Version 5.0.1 (January 19, 2023)
+
+### Fixes
+
+- Diagram Editor. Fix the issue which caused lines not always being drawn in their places if data was exported and then loaded again
+- Now it is possible to define the coordinates for lines in the default mode (new "points" property of the line object)
+- Diagram Editor. Fix the issue with dragging of shapes in the grid after changing the zoom level
+- Fix the error thrown after clicking on the "Auto layout" button in the absence of shapes
+- Fix the issue with display of default settings after creation of lines via the editor
+- Fix the issue with scale of Diagram/Diagram Editor appeared when auto-placing shapes in the "radial" mode
+
+# Version 5.0 (September 7, 2022) 
+
+### Breaking changes
+
+The new release introduces some changes to the "lineGap" property. Check the Migration article to keep in step with the latest version.
+
+### New functionality
+
+- Radial algorithm of auto-placement of shapes:
+	- the "placemode" parameter is added to the "autoplacement" property
+	- the "placemode" parameter is added to the "autoPlace()" method
+- The ability to set tooltips for toolbar icons:
+	- the "tooltip" parameter of the icon object is added to the "toolbar" property
+
+
+# Version 4.2 (March 3, 2022)
+
+### New functionality
+
+- Touch support
+- The ability to specify the default setting for lines via the lineConfig property of Diagram
+- The ability to specify the default settings for new lines created in the editor via the lineConfig property of Diagram Editor
+- The ability to add default sets of org shapes, groups, swimlanes in the necessary order when configuring sections in the left panel of the editor
+
+### Updates
+
+- The defaultLinkType property of Diagram is deprecated. Check the Migration article
+- The shapeSections property of Diagram Editor is updated. Check the Migrationarticle
+- Now it is possible to define the default configurations not only for shapes of the particular types but also for lines:
+  - the defaults property of Diagram is updated
+  - the defaults property of Diagram Editor is updated
+- The documentation for "Modes of connecting shapes" is updated
+
+
+# Version 4.1 (December 7, 2021)
+
+### New functionality
+
+- The ability to add partner shapes in the org chart  mode
+- The ability to add assistant shapes in the org chart  mode
+- The ability to add titles to lines in the default mode
+- The ability to drag and drop shapes from one parent to another in Editor in org chart and mind map modes. The shapes are dragged with their children items
+- The ability to style target items in Editor in org chart and mindmap modes
+
+### API
+
+- New events of the Diagram object: emptyAreaDblClick, emptyAreaMouseDown, lineTitleClick, lineTitleDblClick, lineTitleMouseDown
+- New Shape properties specific for the org chart mode: assistant, partner, catchItem, giveItem
+- New Shape properties specific for the mindmap mode: catchItem, giveItem
+- New Line properties specific for the default mode: title
+- New methods of the Editor object: setViewMode(), zoomIn(), zoomOut()
+- New events of the Editor object: beforeLineTitleMove, afterLineTitleMove, lineTitleMoveEnd, itemTarget, beforeItemCatch, afterItemCatch
+- New properties of the Editor object: itemsDraggable
+- New HistoryManager methods: add(), disable(), enable(), isRedo(), redo(), reset(), undo()
+- New HistoryManager properties: disabled, saveDelay
+- New Selection method: getSubId()
+
+### Updates
+
+- Updated events of InlineEditor: subHeaderId parameter has been changed to subId
+- Updated events of Selection API: subId parameter has been added
+- The default type of the shape in the default mode has been changed to "rectangle"
+
+### Fixes
+
+- The performance has been improved for all types of diagrams
+- Fix of the incorrect work of undo/redo buttons in Toolbar of Editor
+
+
+# Version 4.0.1 (September 16, 2021)
+
+### Fixes
+
+- Fix the display of connectors when rotating the shape
+- Fix the minified styles of the diagram
+- Fix the work of the algorithm when adding new items into the diagram editor in the "org"/"mindmap" modes
+- Fix the work of the right panel of the editor when working with styles of the text
+
+
+# Version 4.0 (September 7, 2021)
+
+### New functionality
+
+- New diagram items are added: Groups, Swimlanes
+- New sections in the left panel of the Diagram Editor are added: Groups, Swimlanes
+- New sidebar options are added in the right panel of the editor for Groups, Swimlanes
+- The ability to edit Groups and Swimlanes via UI
+- Extended list of locale options
+- The ability to operate the cells of a swimlane via CellManager API
+- The ability to edit the text of an item by double-clicking on it
+- DHTMLX Diagram with Angular demo is added
+- DHTMLX Diagram with React demo is added
+- DHTMLX Diagram with Vue.js demo is added
+- The ability to add identical items with different styles and settings to the left panel of the editor
+
+### API
+
+- New CellManager API methods: add(), getCellId(), getCellIndex(), getSubHeaderCellId(), getSubHeaderCellIndex(), getSubHeaderType(), move(), remove(), resetSwimlane(), setSwimlane(), validation()
+- New CellManager API events: afterCellsAdd, afterCellsMove, afterCellsRemove, afterCellsValidation, beforeCellsAdd, beforeCellsMove, beforeCellsRemove, beforeCellsValidation
+- New events of the diagram object: afterSubmenuOpen, beforeSubmenuOpen, groupClick, groupDblClick, groupHeaderClick, groupHeaderDblClick, groupMouseDown, itemClick, itemDblClick, itemMouseDown, itemMouseOut, itemMouseOver, lineDblClick, lineMouseDown
+- New events of the editor object: shapeMoveEnd, beforeItemMove, afterItemMove, itemMoveEnd, beforeGroupMove, afterGroupMove, groupMoveEnd
+- New methods of the shape collection: eachChild(), eachParent(), getRoot(), getRoots()
+- New inline editing events: afterEditorClose, afterEditorEditing, afterEditorOpen, beforeEditorClose, beforeEditorEditing, beforeEditorOpen
+- New "editable" and "fixed" configuration attributes of the shape object
+
+### Updates
+
+- Improved keyboard navigation
+- Redesigned shapes
+- Updated events of the editor object: beforeShapeMove and afterShapeMove
+- Upgraded structure of Shape Collection API
+
+### Fixes
+
+- Fix the incorrect work of TypeScript type definitions in the editor
+- Fix the issue which caused the toolbar button pressed in the editor, which is placed inside the HTML form, to trigger the form sending
+- Now it is possible to resize an element only when the angle of its rotation is equal either to 0 or 360 degrees.
+- Significant optimization of Diagram styles
+
+
+# Version 3.1.0 (April 15, 2021)
+
+### New functionality
+
+- TypeScript Support
+- New type of dhtmlxDiagram is added: Mind Map
+- New CSS template for DHTMLX Diagram
+- The ability to configure the direction of the child shapes relative to the root shape in Mind Map via the typeConfig configuration property of the diagram object
+- The ability to add custom event handlers for custom shapes via the "eventHandlers" attribute of the addShape() method
+- The ability to customize the toolbar for editing shapes in Diagram, Org Chart, and Mind Map Editors
+- New events of the Diagram Editor object: BeforeShapeIconClick and AfterShapeIconClick, BeforeShapeMove and AfterShapeMove
+- New events of the Org Chart Editor object: BeforeShapeIconClick and AfterShapeIconClick, BeforeShapeMove and AfterShapeMove
+- The ability to cancel sending CSS styles to the export service via the exportStyles configuration option of the diagram object
+
+### Updates
+
+- The type configuration property of the diagram object is updated: new "default" and "mindmap" values are added
+- The collapseItem and expandItem method are updated: the second "dir" parameter is added
+- The BeforeCollapse, AfterCollapse, BeforeExpand and AfterExpand events are updated: the second "dir" parameter is added
+
+### Fixes
+
+- Fix the issue with the selection module for all types of dhtmlxDiagram
+- Fix the issue with the scroll of the diagram when applying the "showItem()" method to the scaled diagram
+- Fix the incorrect work of DOM Parser with HTML templates
+- Fix the issue that caused the root shape to be collapsed after collapsing any child shape
+- Fix the issue with formatting of the shape text
+- Fix the issue that appeared after adding long text into the textarea field of the right panel of the editor
+- Fix the issue with adding of special chars to the text of custom shapes
+- Fix the issue with warnings shown in the console for custom shapes
+- Fix the script error thrown after deleting the root shape in the editor
+- Fix the issue with the error shown in the console after applying the "Auto Layout" button in Diagram Editor when the editor is not configured
+- Fix the issue that caused the type of the shape outline not to be applied after its changing in Diagram Editor
+- Fix the issue with tracking of the shape parameters in the right panel of Diagram Editor
+- Fix the issue with removing focus from the shape in Diagram Editor
+- Fix the issue with setting connectors between the shapes in the necessary order in Diagram Editor
+- Fix the incorrect work of the "Ctrl+A" combination in Org Chart Editor
+- Fix the issue that caused the shapes to be pasted without connectors when the connected shapes are copied
+- Now there is no the ability to remove the root shape from Org Chart Editor using keyboard navigation
+
+
+# Version 3.0.4 (January 27, 2021)
+
+### Fixes
+
+- Fix the incorrect behavior of the shape selected in Diagram Editor when working with the input field on the page
+- Fix the issue that caused a collapsed/expanded item not to work with its parent
+- Fix the incorrect work of the showItem() method when the child item is hidden
+
+
+# Version 3.0.3 (December 23, 2020)
+
+### Updates
+
+- The new "UndoButton" and "RedoButton" events are available in Diagram Editor
+- Images now are converted to the base64 format before sending to the Export module
+
+### Fixes
+
+- Fix issue with Diagram export service
+
+
+# Version 3.0.2 (Jule 14, 2020)
+
+### Fixes
+
+- Fix issue with import data from JSON to Org Chart Editor
+- Fix the incorrect work of the addShape() method while configuring Right Panel
+- Improved behavior of historyManager in Editors (Undo/Redo buttons)
+
+
+# Version 3.0.1 (May 29, 2020)
+
+### Fixes
+
+- Fix issue with the autoPlace() method
+- Fix issue with PNG/PDF export modules
+
+
+# Version 3.0.0 (May 12, 2020)
+
+### New functionality
+
+- New autoPlace method and autoplacement property are added for auto-arranging connected diagram shapes in the hierarchical structure
+- Ability to set the default configuration of a shape
+- The addShape method for creating custom shapes in Diagram and Org Chart is added
+- Ability to create custom shapes in Diagram Editor and Org Chart Editor via the addShape method of Diagram
+- New configuration properties of Diagram Editor: defaults, shapeSections, shapeBarWidth, scalePreview, scale, gapPreview, controls
+- New configuration property of Org Chart Editor: defaults, scale, controls
+- The Grid Step sidebar option is added to Diagram and Org Chart editors
+- Ability to hide/show any toolbar button of Editors as well as the Grid Step sidebar option via the controls configuration property
+- Ability to specify sidebar options for editing custom properties in the right panel of Diagram Editor and Org Chart Editor via the properties attribute of the addShape method
+- Ability to create sections for structuring shapes in the left panel of the diagram editor
+- Possibility to customize the appearance of shapes rendered in the left panel of Diagram Editor via the preview property of the defaults attribute
+- Ability to select, copy, paste, delete, move several shapes in Diagram Editor and Org Chart Editor
+- Ability to select and delete several connectors in Diagram Editor
+- Ability to import data from a JSON file to a diagram or org chart editor via the "Import Data" button
+- The destructor method is added
+
+### Updates
+
+- Ability to use custom HTML templates in IE
+- Diagram and Org Chart Editor UI was updated and improved
+- Ability to connect shapes from center to center
+- A set of hotkeys for the editor mode is updated
+- The ability to set a connector line to the text shape of Diagram Editor
+- Auto-fit of the content width of the text shape is added
+
+
+# Version 2.2.1 (December 30, 2019)
+
+### Fixes
+
+- Fix issue with IE support for image loader in Diagram editor
+
+
+# Version 2.2 (November 27, 2019)
+
+### New functionality
+
+- Ability to create custom types of shapes for Diagram and Org Chart via using SVG and HTML templates
+- Ability to build mixed diagrams and org charts
+- Ability to export data from the Diagram Editor and Org Chart Editor to the JSON format
+- The showExport option and ExportData event are added in Diagram Editor and Org Chart Editor
+
+### Fixes
+
+- Fix issue with exporting a diagram into the PDF and PNG formats
+- Fix incorrect work of the mouse events
+- Fix issue with deleting child shapes in org charts
+- Fix the incorrect work of the right and left panels in Diagram Editor
+- Fix issue with auto-generating of the unique id's of shapes and connectors
+
+
+# Version 2.1.1 (October 11, 2019)
+
+### Fixes
+
+- Issues with img-card in IE
+
+
+# Version 2.1 (May 22, 2018)
+
+### New functionality
+
+- Handy Diagram editor for building clear-cut diagrams
+- Enriched set of config options for shapes and connectors
+- Greater possibilities for customization
+
+### Updates
+
+- Hotkeys are added for editing Diagram in the editor
+- New event emptyAreaClick is added
+- The lineGap configuration option is added
+
+
+# Version 2.0 (February 15, 2018)
+
+### Breaking Change
+
+- The API structure was totally reorganized and improved to simplify work with it. Follow the [Migration](https://docs.dhtmlx.com/diagram/migration/#11---20) article to learn all the changes.
+
+### New functionality
+
+- Ability to create diagrams of any type and stylize them
+- Variety of shapes and connectors
+- Export to PDF and PNG formats
+
+### Updates
+
+- Ability to find necessary shapes
+- Ability to filter shapes by specified criteria
+- Ability to add a toolbar with icons for shapes to simplify interaction with them
+- Enhanced performance
+- Ability to adjust to any HTML container and built-in auto-sizing
+
+
+# Version 1.1 (December 5, 2017)
+
+### New functionality
+
+- Using Editor in the org chart mode
+- Ability to save and restore the state
+- Extended customization possibilities
+
+### Updates
+
+- Extended API: new methods, properties and events
+
+
+# Version 1.0 (September 29, 2017)
+
+### Initial functionality
+
+- Organogram mode
+- Vertical and horizontal autoplacement strategies
+- Loading data from JSON
+- API to manage data and branch state

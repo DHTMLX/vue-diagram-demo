@@ -1,0 +1,30 @@
+export { awaitRedraw, setTheme } from "../../ts-common/dom";
+export { DataCollection, DataEvents } from "../../ts-data";
+export { shapes as DiagramShapes } from "./components/shapeFactory";
+import { View } from "../../ts-common/view";
+import { IDefaultEditorConfig, IOrgEditorConfig, IMindmapEditorConfig, IDiagramEditor, DiagramEditorEvents, IDiagramEditorHandlersMap, IEditorConfig, HistoryManager } from "../../ts-diagram-editor";
+import { Editbar, Toolbar, View as Views } from "../../ts-diagram-editor/sources/view";
+import { CopyManager } from "../../ts-diagram-editor/sources/helpers/CopyManager";
+import { IDataItem } from "../../ts-data";
+import { IEventSystem } from "../../ts-common/events";
+import { DataEvents, DiagramEvents, SelectionEvents } from "./types";
+import { Diagram } from "../../ts-diagram";
+export declare class DiagramEditor extends View implements IDiagramEditor {
+    version: string;
+    config: IDefaultEditorConfig | IOrgEditorConfig | IMindmapEditorConfig | IEditorConfig;
+    events: IEventSystem<DataEvents | SelectionEvents | DiagramEvents | DiagramEditorEvents, IDiagramEditorHandlersMap>;
+    view: Views;
+    toolbar: Toolbar;
+    editbar: Editbar;
+    diagram: Diagram;
+    history: HistoryManager;
+    model: CopyManager;
+    constructor(container: string | HTMLElement, config?: IDefaultEditorConfig | IOrgEditorConfig | IMindmapEditorConfig);
+    paint(): void;
+    destructor(): void;
+    import(diagram: Diagram): void;
+    parse(data: IDataItem[]): void;
+    serialize(): IDataItem[];
+    zoomIn(step: number): void;
+    zoomOut(step: number): void;
+}

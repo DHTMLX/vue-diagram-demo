@@ -1,13 +1,17 @@
-<template>
-  <div id="app"></div>
-</template>
-
 <script>
+import Diagram from "./components/Diagram.vue";
+import { getData } from "./data";
+
 export default {
-  name: "App",
+  components: { Diagram },
+  data() {
+    return {
+      data: getData(),
+    };
+  },
 };
 </script>
 
-<style>
-@import "./index.css";
-</style>
+<template>
+  <Diagram :data="data"  />
+</template>

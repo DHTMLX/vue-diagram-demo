@@ -1,46 +1,29 @@
-# compiled output
-/dist
-/tmp
-/out-tsc
-/docs
-/storybook-static
-# Only exists if Bazel was run
-/bazel-out
-
-# dependencies
 /node_modules
+/dist
 
-# profiling files
-chrome-profiler-events*.json
-speed-measure-plugin*.json
+# Environment variables
+.env
+.env.local
+.env.*.local
 
-# IDEs and editors
-/.idea
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# IDE - VSCode
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-.history/*
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
-# misc
-/.sass-cache
-/connect.lock
-/coverage
-/libpeerconnection.log
-npm-debug.log
-yarn-error.log
-testem.log
-/typings
-
-# System Files
+# Operating System Files
 .DS_Store
 Thumbs.db
+
+# Temporary files
+.tmp
+.temp
