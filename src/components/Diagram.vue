@@ -4,15 +4,20 @@ import { DiagramEditor } from "@dhx/trial-diagram";
 
 export default {
   props: ["data"],
-
+  data() {
+    return {
+      diagram: null,
+    };
+  },
   mounted() {
-    new DiagramEditor(this.$refs.cont, {
+    this.diagram = new DiagramEditor(this.$refs.cont, {
       type: "default"
     });
+    this.diagram?.parse(this.data);
   },
   unmounted() {
+    this.diagram.destructor();
     this.$refs.cont.innerHTML = "";
-
   },
 };
 </script>
