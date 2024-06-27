@@ -5,7 +5,7 @@
     "start": "vite",
     "build": "vite build",
     "preview": "vite preview --port 4173",
-    "deploy": "gh-pages -d dist"
+    "deploy": "yarn build && gh-pages -d dist"
   },
   "dependencies": {
     "@dhx/trial-diagram": "^6.0.1",
