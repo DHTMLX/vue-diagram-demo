@@ -1,38 +1,38 @@
-<p align="center">
-	<a href="https://dhtmlx.github.io/vue-diagram-demo/?path=/story/org-chart-editor--img-card"><img src="https://raw.githubusercontent.com/DHTMLX/vue-suite-demo/master/public/Logo.svg" width="150" height="55"></a>
-</p>
+# DHTMLX Diagram with Vue Demo
 
-# DHTMLX Diagram + Vue
+[![dhtmlx.com](https://img.shields.io/badge/made%20by-DHTMLX-blue)](https://dhtmlx.com/)
 
-## Installation
+![DHTMLX Diagram with Vue Demo](https://raw.githubusercontent.com/DHTMLX/vue-diagram-demo/master/diagram.png)
 
-`npm install` or `yarn`
+## How to start
 
-## Local development
+Clone the repository or download files.
 
-`npm run storybook` or `yarn storybook`
+```
+yarn
+yarn start
+```
 
-Open [http://localhost:6006](http://localhost:6006) to view it in the browser.
+or
 
-## Live demos
+```
+npm install
+npm run start
+```
 
-- [Diagram with Editor in org chart mode](https://dhtmlx.github.io/vue-diagram-demo/?path=/story/org-chart-editor--img-card)
-- [Diagram with Editor in org chart mode. Custom shapes](https://dhtmlx.github.io/vue-diagram-demo/?path=/story/org-chart-editor--custom-chape)
-- [Diagram with Editor in default mode. Auto layout button](https://dhtmlx.github.io/vue-diagram-demo/?path=/story/default-editor--autoplacement)
-- [Diagram with Editor in default mode. Swimlane and export to pdf/png](https://dhtmlx.github.io/vue-diagram-demo/?path=/story/default-editor--swimlane)
-- [Diagram with Editor in default mode. Groups to organize shapes](https://dhtmlx.github.io/vue-diagram-demo/?path=/story/default-editor--group)
-- [Diagram with Editor in default mode. Custom shapes](https://dhtmlx.github.io/vue-diagram-demo/?path=/story/default-editor--custom-shape)
-- [Diagram with Editor in mindmap mode](https://dhtmlx.github.io/vue-diagram-demo/?path=/story/mindmap-editor--emotions)
+You can also use [GitHub Codespaces](https://docs.github.com/en/codespaces/developing-in-a-codespace/creating-a-codespace-for-a-repository) to run online.
 
+## Useful links
+
+- **[Online demo](https://replit.com/@dhtmlx/dhtmlx-diagram-with-vue)**
+- [More demos about the DHTMLX Diagram functionality](https://snippet.dhtmlx.com/a9t2z2dt?tag=diagram&mode=wide)
+- [Technical support ](https://forum.dhtmlx.com/c/diagram)
+- [Online  documentation](https://docs.dhtmlx.com/diagram/)
 
 ## Follow us
 
-Star our GitHub repo :star:
-
-Watch our tutorials on [YouTube](https://www.youtube.com/user/dhtmlx/videos) :eyes:
-
-Read us on [Medium](https://medium.com/@dhtmlx) :newspaper:
-
-Follow us on [Twitter](https://twitter.com/dhtmlx) :feet:
-
-Like our page on [Facebook](https://www.facebook.com/dhtmlx/) :thumbsup:
+- Star our GitHub repo :star:
+- Watch our tutorials on [YouTube](https://www.youtube.com/user/dhtmlx/videos) :eyes:
+- Read us on [Medium](https://dhtmlx.medium.com) :newspaper:
+- Follow us on [Twitter](https://twitter.com/dhtmlx) :feet:
+- Like our page on [Facebook](https://www.facebook.com/dhtmlx/) :thumbsup:
