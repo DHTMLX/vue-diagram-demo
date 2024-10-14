@@ -1,17 +1,17 @@
 <script>
-import Diagram from "./components/Diagram.vue";
+import DiagramEditor from "./components/DiagramEditor.vue";
 import { getData } from "./data";
 
 export default {
-  components: { Diagram },
+  components: { DiagramEditor },
   data() {
     return {
-      data: getData(),
+      data: getData()
     };
-  },
+  }
 };
 </script>
 
 <template>
-  <Diagram :data="data"  />
+  <DiagramEditor :data="data"  />
 </template>
